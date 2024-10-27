@@ -112,6 +112,11 @@ main{
     width: 400px;
     font-size: 1.5rem;
     border-radius: .5rem;
+    display: none;
+}
+
+.modal.active{
+    display: block;
 }
 
 .modal .form{
