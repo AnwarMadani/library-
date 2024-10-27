@@ -22,6 +22,29 @@
                 <button class="delete">Delete</button>
             </div>
         </div>
+        <div class="modal">
+            <div class="form">
+                <h3>Add new Book</h3>
+            <input type="text"
+                placeholder="Title"
+                required
+                maxlength="100"/>
+            <input type="text"
+                placeholder="Author"
+                required
+                maxlength="100"/>
+            <input type="number"
+                placeholder="Pages"
+                required
+                max="10000"/>
+                <div class="is-read">
+                    <label for="is-read">Read</label>
+                    <input type="checkbox" id="is-read">
+                </div>
+                <button>Submit</button>
+            </div>
+        </div>
+        <div class="overlay"></div>
     </main>
 </body>
 </html>
