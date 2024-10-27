@@ -51,5 +51,41 @@ main{
 }
 
 .books-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    padding: 1rem;
+}
 
+.book{
+    background-color: #e5e7eb;
+    color: black;
+    border: 1px solid black;
+    height: 300px;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: .5rem;
+}
+
+.book button{
+    width: 80%;
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border-radius: .5rem;
+    border: 1px solid black;
+}
+
+.book .read{
+    background-color: rgb(19, 187, 19);
+}
+
+.book .read:hover{
+    background-color: rgb(28, 141, 28);
+}
+
+.book .notread{
+    background-color: rgb(163, 11, 11);
 }
