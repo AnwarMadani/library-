@@ -49,8 +49,6 @@ function closeAddBookModal(){
     overlay.classList.remove('active');
 }
 
-// GOOD
-
 function updateBooksContainer(){
     booksContainer.innerHTML = '';
     for(let book of myLibrary){
@@ -127,7 +125,6 @@ function toggleRead(e){
     const title = e.target.parentNode.parentNode.firstChild.firstChild.innerHTML;
     
     const book = getBook(title);
-    console.log(book);
     book.read = !book.read;
     updateBooksContainer();
 }
