@@ -1,4 +1,4 @@
-const myLibrary = [];
+let myLibrary = [];
 const addBookBtn = document.getElementById('addBookBtn');
 const addBookModal = document.getElementById('addBookModal');
 const overlay = document.getElementById('overlay');
@@ -27,8 +27,12 @@ function addBookToLibrary(newBook){
     }
 }
 
-function removeBook(title){
+function removeBookFromLibrary(title){
     myLibrary = myLibrary.filter(book => book.title !== title)
+}
+
+function getBook(title){
+    return myLibrary.find(book => book.title === title);
 }
 
 addBookBtn.addEventListener("click", openAddBookModal);
@@ -68,9 +72,9 @@ function createBookCard(book){
     pages.classList.add('pages');
     deleteBtn.classList.add('delete');
 
-    // readBtn.addEventListener("click", toggleRead);
+    readBtn.addEventListener("click", (e) => toggleRead(e));
 
-    // deleteBtn.addEventListener("click", removeBook);
+    deleteBtn.addEventListener("click", (e) => removeBook(e));
 
     title.textContent = `${book.title}`;
     author.textContent = `${book.author}`;
@@ -110,4 +114,20 @@ function addBook(e){
     addBookToLibrary(newBook);
     updateBooksContainer();
     closeAddBookModal();
+}
+
+function removeBook(e){
+    const title = e.target.parentNode.parentNode.firstChild.firstChild.innerHTML;
+
+    removeBookFromLibrary(title);
+    updateBooksContainer();
+}
+
+function toggleRead(e){
+    const title = e.target.parentNode.parentNode.firstChild.firstChild.innerHTML;
+    
+    const book = getBook(title);
+    console.log(book);
+    book.read = !book.read;
+    updateBooksContainer();
 }
