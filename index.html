@@ -11,9 +11,9 @@
     <header><h1>Library</h1></header>
     <main>
         <div class="button">
-            <button>+ Add new book</button>
+            <button id="addBookBtn">+ Add new book</button>
         </div>
-        <div class="books-container">
+        <div class="books-container" id="booksContainer">
             <div class="book">
                 <h3 class="title">LOTR</h3>
                 <h3 class="author">Tolkien</h3>
@@ -22,8 +22,8 @@
                 <button class="delete">Delete</button>
             </div>
         </div>
-        <div class="modal">
-            <div class="form">
+        <div class="modal" id="addBookModal">
+            <form class="form" id="addBookForm">
                 <h3>Add new Book</h3>
             <input type="text"
                 placeholder="Title"
@@ -42,9 +42,9 @@
                     <input type="checkbox" id="is-read" class="checkbox">
                 </div>
                 <button>Submit</button>
-            </div>
+            </form>
         </div>
-        <div class="overlay"></div>
+        <div class="overlay" id="overlay"></div>
     </main>
 </body>
 </html>
