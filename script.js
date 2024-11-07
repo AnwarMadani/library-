@@ -104,7 +104,14 @@ function createBook(){
     return new Book(title, author, pages, isRead);
 }
 
-addBookSubmitBtn.addEventListener("click", (e) => addBook(e));
+addBookSubmitBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    if(!addBookForm.checkValidity()){
+        addBookForm.reportValidity();
+        return;
+    }
+    addBook(e);
+});
 
 function addBook(e){
     e.preventDefault();
@@ -128,3 +135,6 @@ function toggleRead(e){
     book.read = !book.read;
     updateBooksContainer();
 }
+
+// FORM VALIDATION
+
