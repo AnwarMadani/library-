@@ -138,3 +138,45 @@ function toggleRead(e){
 
 // FORM VALIDATION
 
+const titleInput = document.getElementById('titleInput');
+
+titleInput.addEventListener("input", (e) => {
+    if(titleInput.validity.valueMissing){
+        titleInput.setCustomValidity("Please enter a title!")
+    } else if(titleInput.validity.tooLong){
+        titleInput.setCustomValidity("The title provided is too long! Please don't exceed 100 characters.")
+    } else if(titleInput.validity.tooShort){
+        titleInput.setCustomValidity("Title must be longer than 5 letters.");
+    } else {
+        titleInput.setCustomValidity("")
+    }
+});
+
+const authorInput = document.getElementById('authorInput');
+
+authorInput.addEventListener("input", (e) => {
+    if(authorInput.validity.valueMissing){
+        authorInput.setCustomValidity("Please enter an Author!")
+    } else if(authorInput.validity.tooLong){
+        authorInput.setCustomValidity("The name provided is too long! Please don't exceed 100 characters.")
+    } else if(authorInput.validity.tooShort){
+        authorInput.setCustomValidity("Author's name must be longer than 5 letters.");
+    } else {
+        authorInput.setCustomValidity("")
+    }
+});
+
+
+const pagesInput = document.getElementById('pagesInput');
+
+pagesInput.addEventListener("input", (e) => {
+    if(pagesInput.validity.valueMissing){
+        pagesInput.setCustomValidity("Please enter the number of pages!")
+    } else if(pagesInput.validity.rangeOverflow){
+        pagesInput.setCustomValidity("The number of pages must be below 10000")
+    } else if(pagesInput.validity.rangeUnderflow){
+        pagesInput.setCustomValidity("The number of pages must be atleast 10");
+    } else {
+        pagesInput.setCustomValidity("")
+    }
+});
